@@ -1,42 +1,37 @@
-                                        **~~解客科技ICEM系统接口自动化框架~~**
+                                        简单的介绍Python+钉钉实现群通知
 
 
-一：基于Python + unittest + requests 接口自动化框架
+一：整个实现过程
 
-    python版本python3.7.3
-    
-二：代码结构
+    1.1 接口自动化单个接口通过
+    1.2 钉钉群配置自定义机器人
+    1.3 脚本实现钉钉群发送通知
 
-    common文件夹下存放一些公共的方法和一些固定的参数
-    mysqlHandle文件夹下存放操作数据库相关的代码
-    Report文件夹用于存放测试报告
-    sendEmail文件夹存放发送邮件及报告附件的方法
-    test_interface文件夹下存放业务接口，接口自动化框架代码存放处
-    testData用于存放测试数据，测试用例
-    HTMLTestRunner为html格式的报告模板
-    run_test.py文件为自动化的入口文件
     
-三：run_test.py参数介绍
-    
-    项目参数：根据需要可筛选不同的业务模块测试用例来执行，目前支持"CPD"，"MA","SETUP"
-    环境参数：开发人员可选择开发环境来执行接口自动化，测试人员可以选择测试环境来执行，目前支持"dev","qa"
-    
-四：执行run_test.py
 
-    执行python run_test.py "项目参数" "环境参数"  就可执行自动化程序
-    例如：python run_test.py MA qa
-    例如：python run_test.py CDP qa
-    例如：python run_test.py SETUP dev
+二：脚本提供方式
     
-五：设置收件人邮箱接收测试报告邮件
+    2.1 代码部署到服务器
+    2.2 代码直接push到GitLab
 
-     def send(self):
-        self.take_messages()
-        self.msg['from'] = 'renming@jiekecloud.com'  # 发送邮件的人
-        _# self.toadder = 'wangsijia@jiekecloud.com,renming@jiekecloud.com'  # 多个收件人
-        self.toadder = 'renming@jiekecloud.com'  # 单个收件人
-        
-六：查看报告
+
+
+三：脚本需要的依赖包及环境
+
+    3.1 依赖包详见requirements.txt
+    3.2 python版本python3.7.3
+
     
-    在Report文件夹下查看最新生成的报告，格式例如：2019-06-11 11-10-37 report.html
-    报告文件为html格式，建议在谷歌浏览器下打开，其它浏览器兼容性可能不好
+四：执行方式及周期
+
+    4.1 用crontab命令行执行
+    4.2 执行脚本方式： * 9 * * * python3 /test_interface/homeproGet_test.py
+    4.3 周期是每天早上9点执行
+    
+五：脚本用途
+
+    5.1 本脚本现阶段实现了线上环境针对数据组是否显示的简单`text`通知，后期持续更新中
+    
+
+   
+
