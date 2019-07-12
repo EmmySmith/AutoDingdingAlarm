@@ -10,10 +10,13 @@ import requests
 import unittest
 import json,time,datetime,threading
 
+import sys
+from dingtalkchatbot.chatbot import DingtalkChatbot
+
+sys.path.append("..")
 from common.public import *
 from common.commonData import *
 from common.login import *
-from dingtalkchatbot.chatbot import DingtalkChatbot
 
 
 class CDP_Interface(unittest.TestCase):
@@ -76,4 +79,4 @@ class CDP_Interface(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    sms = CDP_Interface()
+    unittest.main()
