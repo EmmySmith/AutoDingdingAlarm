@@ -6,3 +6,4 @@
 class commonData():
     pageId = None
     flag = None
+    allUsers = None
