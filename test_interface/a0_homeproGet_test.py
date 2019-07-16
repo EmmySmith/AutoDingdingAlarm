@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/7/13 11:04 AM
+# @Time    : 2019-06-18 16:37
 # @Author  : Emmy
+# @File    : a0_homeproGet_test.py
 
+
+#!/usr/bin/python
+# coding=utf-8
 import requests
 import unittest
-import json,time,datetime
+import json,time,datetime,threading
 
 import sys
 from dingtalkchatbot.chatbot import DingtalkChatbot
@@ -15,15 +19,43 @@ from common.commonData import *
 from common.login import *
 
 
-class CDP_Interface(unittest.TestCase):
+class a0_homeproGet_test(unittest.TestCase):
 
+    @classmethod
+    def setUpClass(self):
+        self.headers = headers
+        self.host = host
+        self.path = "/api/icem-report/home/pro/get"
+        print("----------开始测试----------")
+
+
+    def test_a1_homeproGet(self):
+        """首页"""
+        self.url = self.host + self.path
+
+        data = {
+            "startDate": (datetime.datetime.now() + datetime.timedelta(days=-8)).strftime('%Y-%m-%d'),
+            "endDate": (datetime.datetime.now() + datetime.timedelta(days=-2)).strftime('%Y-%m-%d')
+        }
+
+        print(self.url)
+        print(data)
+        response = requests.post(url=self.url,data= json.dumps(data), headers=self.headers)
+        print (response.text)
+        commonData.flag = json.loads(response.text)["body"]["underDTOList"][0]["active"]["flag"]
+        print(commonData.flag)
+        return commonData.flag
+
+
+
+'''
     def test_b(self):
         """调用钉钉机器人通知"""
         # WebHook地址
         #测试
         webhook = 'https://oapi.dingtalk.com/robot/send?access_token=94957547970c3816d2db8d2ea7aea8fbf6eeac0ed7341c611e5d5d0b085762c8'
         #钉钉
-        #webhook = 'https://oapi.dingtalk.com/robot/send?access_token=e1cf8bea4453ea92a5af082d92950ff451d76ae087df7e301ce2cbc7bcc003de'
+        # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=e1cf8bea4453ea92a5af082d92950ff451d76ae087df7e301ce2cbc7bcc003de'
         # 初始化机器人小精灵
         xiaoding = DingtalkChatbot(webhook)
         # Text消息@所有人
@@ -41,6 +73,9 @@ class CDP_Interface(unittest.TestCase):
 
     def tearDown(self):
         pass
+'''
+        
+
 
 
 

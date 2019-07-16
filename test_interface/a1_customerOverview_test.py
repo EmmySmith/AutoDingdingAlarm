@@ -15,7 +15,7 @@ from common.commonData import *
 from common.login import *
 
 
-class test_b_customerOverview(unittest.TestCase):
+class a1_customerOverview_test(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
@@ -24,7 +24,7 @@ class test_b_customerOverview(unittest.TestCase):
         self.path = "/api/icem-report/customer/overview"
         print("----------开始测试----------")
 
-    def test_b_customerOverview(self):
+    def test_a2_customerOverview(self):
         """客户信息概览"""
         self.url = self.host + self.path
 
@@ -32,10 +32,13 @@ class test_b_customerOverview(unittest.TestCase):
 
         }
         print(self.url)
-        print(data)
         response = requests.post(url=self.url, data=json.dumps(data), headers=self.headers)
         print(response.text)
         commonData.allUsers = json.loads(response.text)["body"]["allUsers"]
         print(commonData.allUsers)
+        return commonData.allUsers
+
+if __name__ == '__main__':
+    unittest.main()
 
 

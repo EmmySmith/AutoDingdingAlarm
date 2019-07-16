@@ -7,3 +7,5 @@ class commonData():
     pageId = None
     flag = None
     allUsers = None
+    hitNum = None
+    value = None
