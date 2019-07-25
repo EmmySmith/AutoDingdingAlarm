@@ -9,6 +9,7 @@
 import requests
 import unittest
 import json,time,datetime,threading
+import time
 
 import sys
 from dingtalkchatbot.chatbot import DingtalkChatbot
@@ -17,6 +18,7 @@ sys.path.append("..")
 from common.public import *
 from common.commonData import *
 from common.login import *
+
 
 
 class a0_homeproGet_test(unittest.TestCase):
@@ -45,6 +47,18 @@ class a0_homeproGet_test(unittest.TestCase):
         commonData.flag = json.loads(response.text)["body"]["underDTOList"][0]["active"]["flag"]
         print(commonData.flag)
         return commonData.flag
+
+
+
+        if (commonData.flag == True):
+
+            print('😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 总记录9=' + str(counter_) + '次')
+
+
+        else:
+            print('💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 总记录9=' + str(counter_) + '次')
+
+
 
 
 

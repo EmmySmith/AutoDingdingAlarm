@@ -7,6 +7,7 @@
 import requests
 import unittest
 import json, time, datetime, threading
+from dateutil.parser import parse
 
 import sys
 from dingtalkchatbot.chatbot import DingtalkChatbot
@@ -59,8 +60,22 @@ class test_a1_homeproGet(unittest.TestCase):
         print(commonData.allUsers)
         return commonData.allUsers
 
+
+
+
+
+
     def test_b_dingding(self):
         """调用钉钉机器人通知"""
+
+        d2 = parse(time.strftime('%Y-%m-%d', time.localtime(time.time())))
+        print('当前日期：'+str(d2))
+        d4 = parse('2019-07-15 00:00:00')
+        print('开始时间：'+str(d4))
+        chazhi = (d2 - d4).days
+        print(chazhi)
+        print('截止今天总监控'+str(chazhi) +'次')
+
         # WebHook地址
         # 测试
         # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=94957547970c3816d2db8d2ea7aea8fbf6eeac0ed7341c611e5d5d0b085762c8'
@@ -72,19 +87,19 @@ class test_a1_homeproGet(unittest.TestCase):
         webhook = 'https://oapi.dingtalk.com/robot/send?access_token=0e8af2347f4aa16039735fa738114c8305445342b546547f054931611750c7a1'
         # 初始化机器人小精灵
         xiaoding = DingtalkChatbot(webhook)
+
         # Text消息@所有人
         if (commonData.flag == True and commonData.allUsers != 0):
-
-            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示', is_at_all=True)
+            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n\n 截止今天总监控'+str(chazhi) +'次', is_at_all=True)
 
         elif (commonData.flag == False  and commonData.allUsers != 0):
-            xiaoding.send_text(msg='😭\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n\n 截止今天总监控'+str(chazhi) +'次', is_at_all=True)
 
         elif (commonData.flag == True  and commonData.allUsers == 0):
-            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示\n\n 截止今天总监控'+str(chazhi) +'次', is_at_all=True)
 
         else:
-            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示', is_at_all=True)
+            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n\n 截止今天总监控'+str(chazhi) +'次', is_at_all=True)
 
 
     def tearDown(self):
