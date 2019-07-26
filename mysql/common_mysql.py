@@ -2,6 +2,8 @@
 
 import pymysql
 import pymysql.cursors
+import sys
+sys.path.append("..")
 #将mysql需要的参数（DBHOST,DBPORT,DBUSERNAME,DBUSERPASSWD,DBNAME）导入
 from common.public import *
 
