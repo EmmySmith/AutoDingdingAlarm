@@ -90,13 +90,13 @@ class test_a1_homeproGet(unittest.TestCase):
 
         # WebHook地址
         # 测试
-        # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=94957547970c3816d2db8d2ea7aea8fbf6eeac0ed7341c611e5d5d0b085762c8'
+        webhook = 'https://oapi.dingtalk.com/robot/send?access_token=94957547970c3816d2db8d2ea7aea8fbf6eeac0ed7341c611e5d5d0b085762c8'
         # 测试内部群
         # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=e1cf8bea4453ea92a5af082d92950ff451d76ae087df7e301ce2cbc7bcc003de'
         # 数据组群
         # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=a68da51f8604fa5672eac4f05a67a372d393facb6d05f6e4e9dc2ccca619b4ca'
         # 林清轩项目组
-        webhook = 'https://oapi.dingtalk.com/robot/send?access_token=0e8af2347f4aa16039735fa738114c8305445342b546547f054931611750c7a1'
+        # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=0e8af2347f4aa16039735fa738114c8305445342b546547f054931611750c7a1'
         # 初始化机器人小精灵
         xiaoding = DingtalkChatbot(webhook)
 
