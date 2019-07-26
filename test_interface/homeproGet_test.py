@@ -11,12 +11,12 @@ from dateutil.parser import parse
 
 import sys
 from dingtalkchatbot.chatbot import DingtalkChatbot
+from mysql.common_mysql import *
 
 sys.path.append("..")
 from common.public import *
 from common.commonData import *
 from common.login import *
-from mysql.common_mysql import *
 
 
 class test_a1_homeproGet(unittest.TestCase):
