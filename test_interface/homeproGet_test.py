@@ -16,6 +16,7 @@ sys.path.append("..")
 from common.public import *
 from common.commonData import *
 from common.login import *
+from mysql.common_mysql import *
 
 
 class test_a1_homeproGet(unittest.TestCase):
@@ -24,9 +25,13 @@ class test_a1_homeproGet(unittest.TestCase):
     def setUpClass(self):
         self.headers = headers
         self.host = host
+        self.sql1 = 'select count(*) from t_crowd t where t.flag = "NO" and t.is_show="YES" and t.type = "USER_DEFINED" and t.crowd_number=0'
+        # self.sql2 = 'select crowd_id from t_crowd t where t.flag = "NO" and t.is_show="YES" and t.type = "USER_DEFINED" and t.crowd_number=0'
+        self.dbname = "geek_icem_crowd"
+
+
         self.path1 = "/api/icem-report/home/pro/get"
         self.path2 = "/api/icem-report/customer/overview"
-
         print("----------开始测试----------")
 
     def test_a1_homeproGet(self):
@@ -76,6 +81,13 @@ class test_a1_homeproGet(unittest.TestCase):
         print(chazhi)
         print('截止今天总监控'+str(chazhi) +'次')
 
+        counts = (DB_api(self.dbname).get_values(self.sql1))
+        # crowd_id  = (DB_api(self.dbname).get_values(self.sql2))
+        print(counts)
+
+
+
+
         # WebHook地址
         # 测试
         # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=94957547970c3816d2db8d2ea7aea8fbf6eeac0ed7341c611e5d5d0b085762c8'
@@ -89,17 +101,18 @@ class test_a1_homeproGet(unittest.TestCase):
         xiaoding = DingtalkChatbot(webhook)
 
         # Text消息@所有人
+
         if (commonData.flag == True and commonData.allUsers != 0):
-            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 标签中圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
 
         elif (commonData.flag == False  and commonData.allUsers != 0):
-            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 标签中圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
 
         elif (commonData.flag == True  and commonData.allUsers == 0):
-            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示\n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 标签中圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
 
         else:
-            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 标签中圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
 
 
     def tearDown(self):

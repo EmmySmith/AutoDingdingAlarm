@@ -17,7 +17,10 @@ headers_fileUpload = {'content-type': "multipart/form-data; boundary=----WebKitF
 
 
 
-
+DBHOST = u'rm-2zeoguh8vww5yhn2w.mysql.rds.aliyuncs.com'
+DBUSERNAME = u'dbwrite'
+DBUSERPASSWD = u'uvSQz3QwnU4dIE9Fwf'
+DBPORT = 3306
 
 
 
