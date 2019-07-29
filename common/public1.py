@@ -16,17 +16,14 @@ headers_fileUpload = {'content-type': "multipart/form-data; boundary=----WebKitF
 				'Authorization': login(host,userName,password)}
 
 
-#线上
-DBHOST = u'rm-2zeoguh8vww5yhn2w.mysql.rds.aliyuncs.com'
-DBUSERNAME = u'dbwrite'
-DBUSERPASSWD = u'uvSQz3QwnU4dIE9Fwf'
+# 测试库
+DBHOST = u'10.10.10.44'
+DBUSERNAME = u'root'
+DBUSERPASSWD = u'jieke123'
 DBPORT = 3306
 
 
-# DBHOST = u'10.10.10.44'
-# DBUSERNAME = u'root'
-# DBUSERPASSWD = u'jieke123'
-# DBPORT = 3306
+
 
 
 

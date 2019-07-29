@@ -1,14 +1,13 @@
 #coding=utf-8
 
+# 测试
 import pymysql
 import pymysql.cursors
 #将mysql需要的参数（DBHOST,DBPORT,DBUSERNAME,DBUSERPASSWD,DBNAME）导入
-from common.public import *
+from common.public1 import *
 
-
-# 线上
 #创建mysql连接类
-class DB_api(object):
+class DB_api1(object):
     def __init__(self,dbname):
         self.conn = pymysql.Connect(host=DBHOST,port=DBPORT,user=DBUSERNAME,passwd=DBUSERPASSWD,db=dbname,charset='utf8')
 
@@ -32,7 +31,7 @@ class DB_api(object):
         self.conn.commit()
         self.cur.close()
 
-    def update_date(self,sql4):
+    def update_values(self,sql4):
 
         self.cur=self.conn.cursor()
         try:
