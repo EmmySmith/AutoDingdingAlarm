@@ -5,7 +5,7 @@ from common.login import login
 
 
 
-host = 'https://icem-geek-fix.jiekecloud.cn'
+host = 'https://icem-qa-fix.jiekecloud.cn'
 userName = "admin_lqx"
 password = "0192023a7bbd73250516f069df18b500"
 # host_dev = 'https://icem-dev-fix.jiekecloud.cn'
