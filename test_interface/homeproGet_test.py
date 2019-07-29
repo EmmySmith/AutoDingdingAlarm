@@ -56,7 +56,7 @@ class test_a1_homeproGet(unittest.TestCase):
         print(data)
         response = requests.post(url=self.url, data=json.dumps(data), headers=self.headers)
         print(response.text)
-        commonData.flag = json.loads(response.text)["body"]["underDTOList"][0]["active"]["flag"]
+        commonData.flag = json.loads(response.text)["body"]["underDTOList"][1]["active"]["flag"]
         print(commonData.flag)
 
 
@@ -119,52 +119,55 @@ class test_a1_homeproGet(unittest.TestCase):
 
         if (commonData.flag == True and commonData.allUsers != 0):
             self.sql3 = ' select countNum from qa_counts where num = 1 '
-            rdl1 = (DB_api1(self.dbname34).get_values(self.sql3))
-            print(rdl1)
-            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+str(rdl1) +'只虫子', is_at_all=True)
+            rdl = (DB_api1(self.dbname34).get_values(self.sql3))
+            print(rdl)
+            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl)) +'只虫子', is_at_all=True)
 
         elif (commonData.flag == False  and commonData.allUsers != 0):
             self.sql3 = ' select countNum from qa_counts where num = 1 '
             self.sql4 = ' update qa_counts set countNum = countNum +1 where num = 1 '
-            self.sql5 = ' select countNum from qa_counts where num = 1 '
+            # self.sql5 = ' select countNum from qa_counts where num = 1 '
 
             rdl = (DB_api1(self.dbname34).get_values(self.sql3))
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
 
-            rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
-            print(rdl1)
+            # rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
+            # print(rdl1)
+            print("虫子"+ (str(rdl+1)))
 
-            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+str(rdl1) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 
         elif (commonData.flag == True  and commonData.allUsers == 0):
             self.sql3 = ' select countNum from qa_counts where num = 1 '
             self.sql4 = ' update qa_counts set countNum = countNum +1 where num = 1 '
-            self.sql5 = ' select countNum from qa_counts where num = 1 '
+            # self.sql5 = ' select countNum from qa_counts where num = 1 '
 
             rdl = (DB_api1(self.dbname34).get_values(self.sql3))
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
 
-            rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
-            print(rdl1)
+            # rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
+            # print(rdl1)
+            print("虫子" + (str(rdl + 1)))
 
 
-            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+str(rdl1) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1))+'只虫子', is_at_all=True)
 
         else:
             self.sql3 = ' select countNum from qa_counts where num = 1 '
             self.sql4 = ' update qa_counts set countNum = countNum +1 where num = 1 '
-            self.sql5 = ' select countNum from qa_counts where num = 1 '
+            # self.sql5 = ' select countNum from qa_counts where num = 1 '
 
             rdl = (DB_api1(self.dbname34).get_values(self.sql3))
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
 
-            rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
-            print(rdl1)
+            # rdl1 = (DB_api1(self.dbname34).get_values(self.sql5))
+            # print(rdl1)
+            print("虫子" + (str(rdl + 1)))
 
-            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+str(rdl1) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 
 
     def tearDown(self):
