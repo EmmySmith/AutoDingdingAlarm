@@ -56,7 +56,8 @@ class test_a1_homeproGet(unittest.TestCase):
         print(data)
         response = requests.post(url=self.url, data=json.dumps(data), headers=self.headers)
         print(response.text)
-        commonData.flag = json.loads(response.text)["body"]["underDTOList"][1]["active"]["flag"]
+        # 正确的是0
+        commonData.flag = json.loads(response.text)["body"]["underDTOList"][0]["active"]["flag"]
         print(commonData.flag)
 
 
