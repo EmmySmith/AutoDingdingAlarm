@@ -102,9 +102,14 @@ class test_a1_homeproGet(unittest.TestCase):
         # 初始化机器人小精灵
         xiaoding = DingtalkChatbot(webhook)
 
+
+
+
+
         # Text消息@所有人
 
         if (commonData.flag == True and commonData.allUsers != 0):
+<<<<<<< HEAD
             num = 0
             issueCount = getOldNum(num)
             print("issueCount is:",issueCount)
@@ -127,6 +132,22 @@ class test_a1_homeproGet(unittest.TestCase):
             issueCount = getOldNum(num)
             print("issueCount is:",issueCount)
             xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+str(issueCount)+'只虫子', is_at_all=True)
+=======
+            xiaoding.send_text(msg='😄\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+
+        elif (commonData.flag == False  and commonData.allUsers != 0):
+
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+
+        elif (commonData.flag == True  and commonData.allUsers == 0):
+
+
+            xiaoding.send_text(msg='😢\n 环境：线上 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+
+        else:
+
+            xiaoding.send_text(msg='💔\n 环境：线上 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 标签圈选人数有'+str(counts)+'个人群为0 \n\n 截止今日共监控'+str(chazhi) +'次', is_at_all=True)
+>>>>>>> 5369f6efffaeb8ecfce8011827668e940dfa5f9a
 
 
     def tearDown(self):
