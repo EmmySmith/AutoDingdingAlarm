@@ -9,3 +9,6 @@ class commonData():
     allUsers = None
     hitNum = None
     value = None
+    hitNum = None
+    averagePrice = None
+    error = None

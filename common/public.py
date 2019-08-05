@@ -5,8 +5,8 @@ from common.login import login
 
 
 
-host = 'https://icem-geek-fix.jiekecloud.cn'
-userName = "admin_lqx"
+host = 'https://icem-pre-fix.jiekecloud.cn'
+userName = "lqx:admin_lqx"
 password = "0192023a7bbd73250516f069df18b500"
 # host_dev = 'https://icem-dev-fix.jiekecloud.cn'
 headers = {'content-type': "application/json;charset=UTF-8",
@@ -16,10 +16,10 @@ headers_fileUpload = {'content-type': "multipart/form-data; boundary=----WebKitF
 				'Authorization': login(host,userName,password)}
 
 
-#线上
-DBHOST = u'rm-2zeoguh8vww5yhn2w.mysql.rds.aliyuncs.com'
-DBUSERNAME = u'dbwrite'
-DBUSERPASSWD = u'uvSQz3QwnU4dIE9Fwf'
+#预发布库
+DBHOST = u'10.10.10.77'
+DBUSERNAME = u'root'
+DBUSERPASSWD = u'jieke123'
 DBPORT = 3306
 
 
