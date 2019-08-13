@@ -151,7 +151,7 @@ class test_a1_homeproGet(unittest.TestCase):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
             rdl = (DB_api1(self.dbname34).get_values(self.sql3))
             print(rdl)
-            xiaoding.send_text(msg='😄\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='😄\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl)) +'只虫子', is_at_all=True)
 #2
         elif (commonData.flag == True and commonData.allUsers == 0 and commonData.hitNum != 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -162,7 +162,7 @@ class test_a1_homeproGet(unittest.TestCase):
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子"+ (str(rdl+1)))
 
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #3
         elif (commonData.flag == True and commonData.allUsers != 0 and commonData.hitNum == 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -171,7 +171,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #4
         elif (commonData.flag == True and commonData.allUsers != 0 and commonData.hitNum != 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -180,7 +180,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #5
         elif (commonData.flag == False and commonData.allUsers != 0 and commonData.hitNum != 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -189,7 +189,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #6
         elif (commonData.flag == True and commonData.allUsers == 0 and commonData.hitNum == 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -198,7 +198,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控' + str(chazhi) + '次\n 共捉' + (str(rdl+1)) + '只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控' + str(chazhi) + '天\n 共捉' + (str(rdl+1)) + '只虫子', is_at_all=True)
 #7
         elif (commonData.flag == True and commonData.allUsers == 0 and commonData.hitNum != 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -207,7 +207,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #8
         elif (commonData.flag == True and commonData.allUsers != 0 and commonData.hitNum == 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -216,7 +216,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #9
         elif (commonData.flag == False and commonData.allUsers == 0 and commonData.hitNum != 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -225,7 +225,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #10
         elif (commonData.flag == False and commonData.allUsers != 0 and commonData.hitNum == 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -234,7 +234,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #11
         elif (commonData.flag == False and commonData.allUsers != 0 and commonData.hitNum != 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -243,7 +243,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #12
         elif (commonData.flag == True and commonData.allUsers == 0 and commonData.hitNum == 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -252,7 +252,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日有数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #13
         elif (commonData.flag == False and commonData.allUsers == 0 and commonData.hitNum == 0 and commonData.error == 0):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -261,7 +261,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)有数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #14
         elif (commonData.flag == False and commonData.allUsers != 0 and commonData.hitNum == 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -270,7 +270,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览有数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 #15
         elif (commonData.flag == False and commonData.allUsers == 0 and commonData.hitNum != 0 and commonData.error == 1):
             self.sql3 = ' select countNum from qa_counts_pre where num = 1 '
@@ -279,7 +279,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='☹️\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)有数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 
 #16
         else:
@@ -290,7 +290,7 @@ class test_a1_homeproGet(unittest.TestCase):
             print(rdl)
             wdl = (DB_api1(self.dbname34).update_values(self.sql4))
             print("虫子" + (str(rdl + 1)))
-            xiaoding.send_text(msg='💔\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'次\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
+            xiaoding.send_text(msg='💔\n 环境：预发布 \n 首页今日无数据显示\n 客户信息概览无数据显示\n 人群画像(活跃)无数据显示\n 人群绩效(活跃)无数据显示 \n\n 截止今日共监控'+str(chazhi) +'天\n 共捉'+(str(rdl+1)) +'只虫子', is_at_all=True)
 
 
     def tearDown(self):
