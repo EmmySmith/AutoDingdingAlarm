@@ -17,16 +17,16 @@ headers_fileUpload = {'content-type': "multipart/form-data; boundary=----WebKitF
 
 
 #预发布库
-DBHOST = u'10.10.10.77'
-DBUSERNAME = u'root'
-DBUSERPASSWD = u'jieke123'
-DBPORT = 3306
+DBHOST = u'*****'
+DBUSERNAME = u'****'
+DBUSERPASSWD = u'*****'
+DBPORT = ****
 
 
-# DBHOST = u'10.10.10.44'
-# DBUSERNAME = u'root'
-# DBUSERPASSWD = u'jieke123'
-# DBPORT = 3306
+# DBHOST = u'*****'
+# DBUSERNAME = u'****'
+# DBUSERPASSWD = u'*****'
+# DBPORT = ******
 
 
 
